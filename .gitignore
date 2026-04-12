@@ -1,8 +1,19 @@
+# virtual environment
+.venv/
 venv/
+
+# python cache
 __pycache__/
 *.pyc
-.env
-embeddings/
-data/*.csv
-*.npy
+*.pyo
+
+# jupyter
 .ipynb_checkpoints/
+
+# large files — don't push to github
+data/*.csv
+embeddings/
+*.npy
+
+# environment variables
+.env
