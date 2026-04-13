@@ -1,0 +1,11 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+.idea/
+.git/
+notebooks/
+*.npy
+data/*.csv
+embeddings/
+.env

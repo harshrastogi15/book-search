@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+
+  # FastAPI service
+  api:
+    build: .
+    container_name: book-search-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./embeddings:/app/embeddings
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
