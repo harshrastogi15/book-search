@@ -1,5 +1,6 @@
 from fastapi import FastAPI, Query
-from search import search_books, get_all_categories
+# from search_cosine import search_books, get_all_categories
+from search_faiss import search_books, get_all_categories
 from typing import Optional
 
 app = FastAPI(
