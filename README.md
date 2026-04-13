@@ -64,11 +64,6 @@ uvicorn main:app --reload
 API runs at `http://localhost:8000`
 Docs at `http://localhost:8000/docs`
 
-### 7. Run the UI (optional)
-```bash
-streamlit run app.py
-```
-
 ## 📡 API Endpoints
 
 | Method | Endpoint | Description |
