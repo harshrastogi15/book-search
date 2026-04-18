@@ -1,8 +1,6 @@
 version: '3.8'
 
 services:
-
-  # FastAPI service
   api:
     build: .
     container_name: book-search-api

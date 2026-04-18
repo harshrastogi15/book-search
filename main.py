@@ -4,7 +4,7 @@ from search_faiss import search_books, get_all_categories
 from typing import Optional
 
 app = FastAPI(
-    title="📚 Book Search API",
+    title="Book Search API",
     description="Semantic book search using Sentence-BERT embeddings",
     version="1.0.0"
 )
@@ -23,7 +23,6 @@ def root():
     }
 
 
-# ---- Search Endpoint ----
 @app.get("/search")
 def search(
     query: str = Query(..., description="What kind of book are you looking for?"),
@@ -31,9 +30,6 @@ def search(
     min_rating: float = Query(0.0, description="Minimum average rating"),
     category: Optional[str] = Query(None, description="Filter by category")
 ):
-    """
-    Search books semantically based on meaning of your query.
-    """
 
     results = search_books(
         query=query,
@@ -55,13 +51,8 @@ def search(
         "results": results.to_dict(orient='records')
     }
 
-
-# ---- Categories Endpoint ----
 @app.get("/categories")
 def categories():
-    """
-    Returns all available book categories for filtering.
-    """
     return {
         "total": len(get_all_categories()),
         "categories": get_all_categories()
